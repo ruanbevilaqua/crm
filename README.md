@@ -17,8 +17,15 @@ Por possuir apenas uma entidade com poucos atributos e nenhum dos atributos ser�
 ## Para rodar o projeto:
 
 - Clone o repositório
+
 - Utilize o composer para baixar as dependências (composer update)
+
 - Altere os dados do banco de dados no arquivo .env para as configurações da sua máquina.
+
 - Rode as migrations para que as tabelas sejam criadas no seu BD (php artisan migrate)
+
+- Rode o seguinte comando para incluir um link para o storage: php artisan storage:link
+
 - Rode o servidor (php artisan serve)
+
 - Acesse o endereço indicado pelo terminal e verifique o sistema funcionando
