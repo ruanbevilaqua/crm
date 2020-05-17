@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Client;
+
 class ClientController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::all();
+        
+        return view('clients.index', ['clients' => $clients]);
     }
 
     /**
@@ -23,7 +27,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -34,7 +38,12 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = "nome.jpg";
+        $path = $request->file('photo')->storeAs('public', $name);
+        $dados = $request->all();
+        $dados['photo'] = $name;
+        $client = Client::create($dados);
+        dd($client);
     }
 
     /**
@@ -45,7 +54,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('clients.show');
     }
 
     /**
