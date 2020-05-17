@@ -38,7 +38,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $name = "nome.jpg";
+        $name = rand(0, 99999999999) . '-' . $request->file('photo')->getClientOriginalName();
+        // dd($name);
         $path = $request->file('photo')->storeAs('public', $name);
         $dados = $request->all();
         $dados['photo'] = $name;
@@ -91,6 +92,9 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = Client::find($id);
+        $client->delete();
+
+        return redirect('clients');
     }
 }
