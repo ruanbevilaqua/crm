@@ -24,7 +24,6 @@
                     <td>
                         <a href="/clients/{{ $client->id }}" class="btn btn-primary">Ver</a>
                         <a href="/clients/{{ $client->id }}/edit" class="btn btn-warning">Editar</a>
-                        <!-- <a href="/clients/{{ $client->id }}/delete" class="btn btn-danger">Apagar</a> -->
                         <form action="{{ url('/clients', ['id' => $client->id]) }}" method="post">
                             <input class="btn btn-danger" type="submit" value="Delete" />
                             <input type="hidden" name="_method" value="delete" />
