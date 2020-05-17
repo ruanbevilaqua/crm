@@ -43,7 +43,8 @@ class ClientController extends Controller
         $dados = $request->all();
         $dados['photo'] = $name;
         $client = Client::create($dados);
-        dd($client);
+        
+        return redirect('clients');
     }
 
     /**
