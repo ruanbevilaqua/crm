@@ -12,15 +12,15 @@ O sistema deve permitir o cadastro, a listagem, a edição e a exclusão de clie
 
 ## Modelo Relacional
 
-Por possuir apenas uma entidade com poucos atributos e nenhum dos atributos será registrado mais de uma vez, a modelagem está na primeira forma normal. Ou seja, a entidade Client não se relaciona com nenhuma outra entidade. 
+Por possuir apenas uma entidade com poucos atributos e nenhum dos atributos ser registrado mais de uma vez (1..1), a modelagem está na primeira forma normal. Ou seja, a entidade Client não se relaciona com nenhuma outra entidade. 
 
 ## Para rodar o projeto:
 
-- Clone o repositório
+- Clone o repositório (git clone https://github.com/ruanbevilaqua/crm)
 
 - Utilize o composer para baixar as dependências (composer update)
 
-- Altere os dados do banco de dados no arquivo .env para as configurações da sua máquina.
+- Altere os dados do banco de dados no arquivo .env para as configurações da sua máquina (Nome do banco de dados, usuário, senha e porta).
 
 - Rode as migrations para que as tabelas sejam criadas no seu BD (php artisan migrate)
 
